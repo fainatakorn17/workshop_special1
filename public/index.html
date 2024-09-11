@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
+        <form class="login-form">
+            <h2>Login</h2>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="login-btn">Login</button>
+            <button type="button" class="hello-btn" onclick="sayHello()">Hello</button>
         </form>
-        <p id="message"></p>
     </div>
-    <script src="js/script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
