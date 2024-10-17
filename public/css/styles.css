@@ -1,47 +1,123 @@
+@keyframes backgroundAnimation {
+    0% { background-color: #fce4ec; }
+    50% { background-color: #f8bbd0; }
+    100% { background-color: #fce4ec; }
+}
+
+/* การตั้งค่าสำหรับพื้นหลัง */
 body {
+    background-color: #fce4ec;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
 }
 
+/* ลวดลายพื้นหลัง */
+.shape {
+    position: absolute;
+    background: rgba(216, 27, 96, 0.2); /* สีชมพูอ่อน */
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatAnimation 6s infinite ease-in-out alternate;
+}
+
+/* วงกลม */
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* ทำให้เป็นวงกลมเต็ม */
+    background: rgba(216, 27, 96, 0.3); /* สีชมพู */
+    opacity: 0.7;
+    animation: floatAnimation 6s infinite ease-in-out alternate;
+}
+
+/* รูปดาว */
+.star {
+    width: 10px;
+    height: 10px;
+    background-color: #d81b60;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: starAnimation 4s infinite alternate;
+}
+
+/* การเคลื่อนไหวของดาว */
+@keyframes starAnimation {
+    0% { transform: scale(1) translateY(0px); }
+    100% { transform: scale(1.5) translateY(-20px); }
+}
+
+/* การเคลื่อนไหวลวดลาย */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-30px); }
+}
+
+/* กล่องล็อกอิน */
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 320px; /* ปรับขนาดให้กว้างขึ้น */
+    text-align: center;
 }
 
-h1 {
-    text-align: center;
+/* โลโก้ */
+.login-logo {
+    width: 120px; /* ปรับขนาดให้ใหญ่ขึ้น เช่น 120px */
+    height: auto;
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
+
+/* ข้อความหัวเรื่อง */
+h1 {
+    color: #d81b60; /* สีชมพูเข้ม */
+    margin-bottom: 20px;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-button {
-    width: 100%;
+/* ช่องกรอกข้อมูล */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);
     padding: 10px;
-    background-color: #007bff;
+    margin: 10px 0;
+    border: 1px solid #d81b60; /* ขอบสีชมพูเข้ม */
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/*ปุ่มล็อกอิน */
+button {
+    background-color: #d81b60; / สีชมพูเข้ม /
+    color: #ffffff;
+    padding: 10px;
     border: none;
-    color: #fff;
+    border-radius: 5px;
+    width: 100%;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ad1457; / สีชมพูเข้มขึ้นเมื่อชี้ /
 }
 
+/* ข้อความแสดงผล*/
 #message {
+    color: #d81b60; / ข้อความสำเร็จ /
     margin-top: 20px;
-    text-align: center;
+}
+
+/* ข้อความแสดงข้อผิดพลาด */
+#error-message {
+    color: red; / สีแดงสำหรับข้อความผิดพลาด */
+    margin-top: 10px;
 }

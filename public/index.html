@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="shape star" style="top: 20%; left: 10%;"></div>
+    <div class="shape star" style="top: 60%; left: 30%; width: 15px; height: 15px;"></div>
+    <div class="shape star" style="top: 40%; left: 70%; width: 8px; height: 8px;"></div>
+    <div class="shape circle" style="top: 30%; right: 10%;"></div>
+    <div class="shape circle" style="bottom: 20%; left: 5%; width: 200px; height: 200px;"></div>
     <div class="login-container">
+        <img src="img/tu-logo.png" alt="Logo" class="login-logo">
         <h1>Login</h1>
-        <form id="loginForm">
+        <div>
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <form id="loginForm">
             <button type="button" onclick="submitLogin()">Login</button>
             <button type="button" onclick="call_REST_API_Hello()">Hello</button>
         </form>
         <p id="message"></p>
     </div>
     <script src="js/script.js"></script>
-</body>
 </html>
